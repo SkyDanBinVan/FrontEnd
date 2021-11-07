@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 8001;
+const port = 8002;
 const restaurantRoutes = require('./routes/web/restaurants');
 const handlebars = require('./handlebars');
 

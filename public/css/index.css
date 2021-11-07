@@ -120,13 +120,17 @@ button:hover,
 
 .anchor--button,
 button {
-  font-size: 1rem;
-  border: 0;
-  background-color: #45425a;
-  color: white;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
-  cursor: pointer;
-  margin-right: 0.5rem;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, #2e2c3b 0%, rgba(72,79,80,1) 100%);
+  color: #fff;
+  transition: all 0.3s ease;
 }
 
 .anchor--button {
@@ -222,7 +226,7 @@ label {
 #navbar__logo {
   color: rgb(128, 127, 127);
   background-color: rgb(12, 11, 11);
-  background-image: -webkit-linear-gradient(#eee, #333);
+  background-image: -webkit-linear-gradient(#413f4d, rgb(77, 92, 94));
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -276,7 +280,7 @@ label {
   outline: none;
   border-radius: 10px;
   background: rgb(0,0,0);
-  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(72,79,80,1) 100%);
+  background: linear-gradient(90deg, #2e2c3b 0%, rgba(72,79,80,1) 100%);
   color: #fff;
   transition: all 0.3s ease;
 }
@@ -284,4 +288,39 @@ label {
 .navbar__links:hover {
   color: gray;
   transition: all 0.3s ease;
+}
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  padding: 0;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
 }

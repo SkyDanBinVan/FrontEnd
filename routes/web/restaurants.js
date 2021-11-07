@@ -17,6 +17,18 @@ Router.post('/', async (req, res, next) => {
     return next(error);
   }
 })
+.post('/:id/menus', async (req, res, next) => {
+  try {
+    await fetch(`${url}/${req.params.id}/menus`, {
+      method: 'post',
+      body: JSON.stringify(req.body),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    res.redirect(`/restaurants/${req.params.id}`);
+  } catch (error) {
+    return next(error);
+  }
+})
 
   .get('/new', (req, res, next) => {
     // render the new restaurant form
@@ -32,7 +44,35 @@ Router.post('/', async (req, res, next) => {
       return next(error);
     }
   })
-  .delete('/:id', async (req, res, next) => {
-    await fetch(url)
+  .get('/:id', async (req, res, next) => {
+    try {
+      const response = await fetch(`${url}/${req.params.id}`);
+      const restaurant = await response.json();
+      const response2 = await fetch(`${url}/${req.params.id}/menus`);
+      const menus = await response2.json();
+      res.render('restaurant', { restaurant, menus });
+    } catch (error) {
+      return next(error);
+    }
   })
+  
+  .get('/:id/edit', async (req, res, next) => {
+    try {
+      const response = await fetch(`${url}/${req.params.id}`);
+      const restaurant = await response.json();
+      res.render('editRestaurant', { restaurant });
+    } catch (error) {
+      return next(error);
+    }
+  })
+  .get('/:id/menus/new', async (req, res, next) => {
+    try {
+      const response = await fetch(`${url}/${req.params.id}`);
+      const restaurant = await response.json();
+      res.render('newMenu', { restaurant });
+    } catch (error) {
+      return next(error);
+    }
+  })
+  
 module.exports = Router;

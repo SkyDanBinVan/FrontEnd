@@ -1,0 +1,12 @@
+<h2>Add a menu</h2>
+
+<form action="/restaurants/{{restaurant.id}}/menus" method='POST'>
+
+  <div>
+    <label for='name'>title</label><br />
+    <input type='text' name='title' id='title' required />
+  </div>
+  <button type='submit' class='button--anchor'>
+    Submit
+  </button>
+</form>
