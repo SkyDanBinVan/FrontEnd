@@ -1,7 +1,3 @@
-/**
- * Delete a restaurant
- *
- */
 async function deleteRestaurant(btn) {
     if (confirm(`Are you sure you want to delete ${btn.getAttribute("data-name")}?`)) {
         const url = `http://localhost:3001/api/restaurants/${btn.getAttribute("data-id")}`;
@@ -12,11 +8,19 @@ async function deleteRestaurant(btn) {
         }
     }
 };
-/**
- * Updates a restaurant via a put request
- *
- */
- async function updateRestaurant(event) {
+
+async function deleteMenu(btn) {
+    if (confirm(`Are you sure you want to delete ${btn.getAttribute("data-name")}?`)) {
+        const url = `http://localhost:3001/api/menus/${btn.getAttribute("data-id")}`;
+        const response = await fetch(url, { method: "DELETE"});
+    
+        if (response.ok) {
+            window.location = "/restaurants"
+        }
+    }
+};
+
+async function updateRestaurant(event) {
 
     event.preventDefault();
     const form = event.target;
