@@ -15,7 +15,7 @@ async function deleteMenu(btn) {
         const response = await fetch(url, { method: "DELETE"});
     
         if (response.ok) {
-            window.location = "/restaurants"
+            window.location = `/restaurants/${btn.getAttribute("data-RestaurantId")}`
         }
     }
 };

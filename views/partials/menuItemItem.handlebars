@@ -1,17 +1,11 @@
 <div class='menu'>
-  <h3>{{this.title}}</h3>
+  <h3>{{this.name}}</h3>
 
   <div class='promo-blocks__actions'>
 
     <button  data-name='{{this.title}}' data-id='{{this.id}}' data-RestaurantId='{{this.RestaurantId}}' type='button' onClick='deleteMenu(this)'>
       Delete
     </button>
-
-    <span>{{> menuItemItem}}</span>
-
-    <p>
-      <a href='/menus/{{this.id}}/new'>Add a menu item</a>
-    </p>
 
   </div>
 </div>

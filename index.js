@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // use restaurant routes
 app.use('/restaurants', restaurantRoutes);
+app.use('/menus', restaurantRoutes);
 
 // serve an index page
 app.get('/', (req, res) => {

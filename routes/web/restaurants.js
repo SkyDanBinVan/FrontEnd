@@ -65,7 +65,7 @@ Router.post('/', async (req, res, next) => {
       return next(error);
     }
   })
-  .get('/:id/menus/new', async (req, res, next) => {
+  .get('/:id/new', async (req, res, next) => {
     try {
       const response = await fetch(`${url}/${req.params.id}`);
       const restaurant = await response.json();

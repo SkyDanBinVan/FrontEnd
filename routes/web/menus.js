@@ -17,3 +17,20 @@ Router.post('/', async (req, res, next) => {
     return next(error);
   }
 })
+.get('/menus/:id/new', async (req, res, next) => {
+  try {
+    await fetch(`/`);
+    res.render('/restaurants');
+  } catch (error) {
+    return next(error);
+  }
+})
+.get('/', async (req, res, next) => {
+  try {
+    const response = await fetch(url);
+    const restaurants = await response.json();
+    res.render('restaurants', { restaurants });
+  } catch (error) {
+    return next(error);
+  }
+})
